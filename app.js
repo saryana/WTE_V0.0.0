@@ -7,7 +7,7 @@ var express = require('express'),
 	path  = require('path'),
 	app = express();
 
-var fields = ["brand_name", "nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
+var stuff = ["brand_name", "nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
 
 // set the port I <3 boobs
 app.set('port', 8008);
@@ -28,29 +28,33 @@ app.post('/data', function(req, res) {
 	var restaurant = data.resturant;
 	var filters = {item_type: 1};
 	console.log(data);
-	for (var i in fields) {
-		var field = fields[i];
+	for (var i in stuff) {
+		var field = stuff[i];
 		if (data[field]) {
+			var amount = data[field].split('-');
+
 			filters[field] = {
-				from: 0,
-				to: parseInt(data[field])
+				from: parseInt(amount[0]),
+				to: parseInt(amount[1])
 			};
 		}
 	}
 	var poo = ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'];
 	ntr.v1_1.search.advanced({
-	    fields: poo,
-    	queries: {
-    		brand_name: restaurant
-       	},
-	    offset:0,
-	    limit:20,
+    	fields: poo,
+    	query: restaurant,
+    	limit: 20,
+    	offset: 0,
 	    filters: filters
 	}, function (err, results) {
 	    if (err) console.log(err);
 	    if (results.total) {
 	    	console.log(results);
-	    	res.send(results);
+	    	
+	    	var potential = results.hits.filter(function(elem) { return elem._score > 1});
+	    	console.log(potential);
+
+	    	res.send(potential);
 	    } else {
 	    	console.log('No results...');
 	    }
