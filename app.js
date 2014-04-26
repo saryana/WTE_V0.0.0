@@ -10,7 +10,7 @@ var express = require('express'),
 var stuff = ["nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
 
 // set the port I <3 boobs
-app.set('port', 8008);
+app.set('port', 8000);
 // share the love, make public available
 app.use(express.static(path.join(__dirname, 'public')));
 // Read the body of the page
