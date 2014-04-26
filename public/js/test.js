@@ -80,7 +80,7 @@
 		var carb = elem.nf_total_carbohydrate;
 		var fib = elem.nf_dietary_fiber;
 		var pro = elem.nf_protein;
-		var elemParagraph = '<p id="rabbits">';
+		var elemParagraph = '<p>';
 		if (item) elemParagraph += 'Food item ' + item;
 		if (resturant) elemParagraph += ' from ' + resturant;
 		if (cals) elemParagraph += ' has ' + cals + ' cals';
