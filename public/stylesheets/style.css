@@ -1,3 +1,15 @@
+html {
+	overflow: hidden;
+}
 .top-buffer {
 	margin-top: 10px;
+}
+td {
+	margin-bottom: 15px;
+}
+.btn {
+	width: 100px !important;
+}
+.btn-primary {
+	width: 70px !important;
 }
