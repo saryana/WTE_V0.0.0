@@ -69,7 +69,7 @@
 	});
 	// move to the right data point
 	$('#right').click(function() {
-		if (start < max) {
+		if (start < max-1) {
 			start++;
 			showElem();
 		}
