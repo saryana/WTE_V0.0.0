@@ -59,16 +59,16 @@
 		var fib = (elem.nf_dietary_fiber) ? elem.nf_dietary_fiber : 0;
 		var pro = (elem.nf_protein) ? elem.nf_protein : 0;
 
-		var elemTable = "";
-		elemTable += "<td>" + item +"</td>";
-		elemTable += "<td>" + cals +"</td>";
-		elemTable += "<td>" + chol +"</td>";
-		elemTable += "<td>" + sodium +"</td>";
-		elemTable += "<td>" + carb +"</td>";
-		elemTable += "<td>" + fib +"</td>";
-		elemTable += "<td>" + pro +"</td>";
-		elemTable += "<td>" + sugar +"</td>";
-		elemTable += "<td>" + fat +"</td>";
+		var elemTable = '';
+		elemTable += '<tr><td>Name</td><td id="name">' + item +'</td></tr>';
+		elemTable += '<td>Calories</td><td>' + cals  +'</td></tr>';
+		elemTable += '<tr><td>Cholesterol (mg)</td><td>' + chol +'</td></tr>';
+		elemTable += '<tr><td>Sodium (mg)</td><td>' + sodium  +'</td></tr>';
+		elemTable += '<tr><td>Carbs (g)</td><td>' + carb  +'</td></tr>';
+		elemTable += '<tr><td>Fiber (g)</td><td>' + fib +'</td></tr>';
+		elemTable += '<tr><td>Protein (g)</td><td>' + pro  +'</td></tr>';
+		elemTable += '<tr><td>Sugar (g)</td><td>' + sugar  +'</td></tr>';
+		elemTable += '<tr><td>Fat (g)</td><td>' + fat  +'</td></tr>';
 		$('#data').append(elemTable);		
 	}
 

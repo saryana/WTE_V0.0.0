@@ -5,14 +5,13 @@ html {
 	margin-top: 10px;
 }
 
-
-td {
-	margin-bottom: 15px;
-	width: 100px !important;
-	height: 60px !important;
+.table-nonfluid {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
 }
-#tbname {
-	width: 200px !important;
+#data td {
+	width: 250px;
 }
 
 .btn {
@@ -20,4 +19,10 @@ td {
 }
 .btn-primary {
 	width: 70px !important;
+}
+#left {
+	float: left;
+}
+#right {
+	float: right;
 }
