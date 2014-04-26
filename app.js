@@ -30,15 +30,16 @@ app.post('/data', function(req, res) {
 	console.log(data);
 	for (var i in stuff) {
 		var field = stuff[i];
-		if (data[field]) {
-			var amount = data[field].split('-');
+		if (data[field].to) {
+			var amount = data[field];
 
 			filters[field] = {
-				from: parseInt(amount[0]),
-				to: parseInt(amount[1])
+				from: parseInt(amount.from),
+				to: parseInt(amount.to)
 			};
 		}
 	}
+	console.log(filters);
 	var poo = ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'];
 	ntr.v1_1.search.advanced({
     	fields: poo,

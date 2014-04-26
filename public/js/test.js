@@ -5,11 +5,14 @@
 		var result = {
 			resturant: $(fields[0]).val()
 		}
-		for (var i = 1; i < fields.length; i++) {
-			var elem = fields[i];
-			var $elem = $(elem);
-			result[elem.id] = $elem.val();
+		for (var i = 1; i < fields.length; i+2) {
+			var elem1 = fields[i];
+			var elem2 = fields[i+1];
+			var $elem = $(elem1);
+			var $elem2 = $(elem2);
+			result[elem1.id] { from: $elem1.val(), to: $elem2.val() };
 		}
+		console.log(result);
 		$.ajax({
 			type:"POST",
 			url:"/data",
