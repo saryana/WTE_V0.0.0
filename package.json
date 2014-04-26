@@ -1,25 +1,27 @@
 {
-	"name": "WTE",
-	"version": "0.0.0",
-	"description": "Meeting your dietary restrictions",
-	"dependencies": {
-		"express": "3.4.7",
-		"nutritionix": "0.0.4"
-	},
-	{
-	"engines": { "node" : "0.10.26" },
-	"contriburors": [
-	{
-		"name": "Sean Aryana",
-		"email": "saryana0@uw.edu"
-	},
-	{
-		"name": "Andrew Tat",
-		"email": "tat@andrewtat.com"
-	},
-	{
-		"name": "Steven Raden",
-		"email": "sgraden@uw.edu"
-	}
-	]
+  "name": "WTE",
+  "version": "0.0.0",
+  "description": "Meeting your dietary restrictions",
+  "dependencies": {
+    "express": "^3.4.7",
+    "nutritionix": "0.0.4",
+    "logfmt": "^1.1.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "contriburors": [
+    {
+      "name": "Sean Aryana",
+      "email": "saryana0@uw.edu"
+    },
+    {
+      "name": "Andrew Tat",
+      "email": "tat@andrewtat.com"
+    },
+    {
+      "name": "Steven Raden",
+      "email": "sgraden@uw.edu"
+    }
+  ]
 }
