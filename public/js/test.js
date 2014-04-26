@@ -3,8 +3,10 @@
 	var start;
 	var max;
 
-	$('window').keypress(function(e) {
-		console.log(e.keyCode);
+	$(window).keypress(function(e) {
+		if (e.keyCode == 13) {
+			$('#submit').trigger('click');
+		}
 	});
 
 
