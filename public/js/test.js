@@ -55,14 +55,14 @@
 		var elemTable = "";
 		elemTable += "<td>" + item +"</td>";
 		elemTable += "<td>" + cals +"</td>";
-		elemTable += "<td>" + fat +"</td>";
 		elemTable += "<td>" + chol +"</td>";
-		elemTable += "<td>" + sugar +"</td>";
 		elemTable += "<td>" + sodium +"</td>";
 		elemTable += "<td>" + carb +"</td>";
 		elemTable += "<td>" + fib +"</td>";
 		elemTable += "<td>" + pro +"</td>";
-		$('#data').append(elemTable);
+		elemTable += "<td>" + sugar +"</td>";
+		elemTable += "<td>" + fat +"</td>";
+		$('#data').append(elemTable);		
 	}
 
 	// show the food item
@@ -120,6 +120,7 @@
 			$('#insert').append(cal);
 		}
 		$('#calb').toggleClass("active");
+
 		calsee = !calsee;
 	});
 

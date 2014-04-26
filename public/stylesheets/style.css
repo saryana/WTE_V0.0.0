@@ -4,9 +4,17 @@ html {
 .top-buffer {
 	margin-top: 10px;
 }
+
+
 td {
 	margin-bottom: 15px;
+	width: 100px !important;
+	height: 60px !important;
 }
+#tbname {
+	width: 200px !important;
+}
+
 .btn {
 	width: 100px !important;
 }
