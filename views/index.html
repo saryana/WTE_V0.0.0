@@ -31,15 +31,15 @@
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="What resturant are you at?">
+                    <div class="input-group" id="search-area">
+                        <input type="text" class="form-control" id="searchbar" placeholder="What restaurant are you at?">
                         <span class="input-group-btn">
                             <button class="btn btn-primary" type="button" id="submit">Eat!</button>
                         </span>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
-	        <div class="row form-group">
+	        <div class="row form-group" id="butts">
 	        	<input class="btn btn-default col-md col-md-offset-2 col-sm" type="button" id="calb" value="Calories">
 		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="fatb" value="Fat">
 		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="chob" value="Cholesterol">
@@ -52,12 +52,11 @@
 	        <div class="row" id="insert"></div>
     	</form>
     	<div class="row" id="result">
+            <input class="btn btn-default btn-large col-sm col-sm-offset-4" type="button" id="new-search" value="New Search">
             <input class="btn btn-primary col-md col-sm  col-xs" type="button" id="left" value="Left">
             <input class="btn btn-primary col-md col-sm col-xs" type="button" id="right" value="Right">
-    		<div class="table-responsive">
 	    		<table class="table table-striped table-nonfluid" id="data">
 	    		</table>
-    		</div>
 
 
     	</div>

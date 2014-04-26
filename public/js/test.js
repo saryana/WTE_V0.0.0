@@ -3,11 +3,15 @@
 	var start;
 	var max;
 
+
+/* Does not work
 	$(window).keypress(function(e) {
 		if (e.keyCode == 13) {
 			$('#submit').trigger('click');
 		}
 	});
+*/
+	$('#result').slideToggle('fast');
 
 
 	$('#submit').click(function() {
@@ -33,6 +37,9 @@
 				if (!data) {
 					alert('that is quite unfortunate');
 				} else {
+					$('#result').slideToggle('fast');
+					$('#search-area').slideToggle('fast');
+					$('#butts').slideToggle('fast');
 					$('#insert').empty();
 					$('.active').removeClass('active');
 					fullData = data;
@@ -43,6 +50,12 @@
 				}
 			}
 		});
+	});
+
+	$('#new-search').click(function() {
+					$('#result').slideToggle('fast');
+					$('#search-area').slideToggle('fast');
+					$('#butts').slideToggle('fast');
 	});
 
 	function loadTable() {

@@ -7,7 +7,7 @@ html {
 .table-nonfluid {
 	margin-left: auto;
 	margin-right: auto;
-	width: 400px !important;
+	width: auto;
 }
 #data td {
 	width: 250px;
@@ -28,4 +28,7 @@ float: left;
 	margin-top: 100px;
 	margin-right: 50px;
 float: right;
+}
+#new-search {
+	margin-bottom: 5px;
 }
