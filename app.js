@@ -1,11 +1,13 @@
 var express = require('express'),
 	constants = require('./config/constants')
 	ntr	= require('nutritionix')({
-		appId: constants.APPID,
-		appKey: constants.APP_KEY
+		appId: '8ae35b74',
+		appKey: '50ecf8955bce7909ca4ff6843e2f9b87'
 	}, true), // set true to help debug
 	path  = require('path'),
 	app = express();
+
+var fields = ["brand_name", "nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
 
 // set the port I <3 boobs
 app.set('port', 8008);
@@ -22,26 +24,37 @@ app.get('/', function(req, res) {
 app.post('/data', function(req, res) {
 	// Get the fields here
 	// restaurant
-	console.log(req.body());
-	/*var restaurant = res.body.restaurant;
-	nutritionix.v1_1.search.advanced({
-	    fields: ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol','nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'],
-	    queries: {
-	    	brand_name: restaurant
-	    },
+	var data = req.body;
+	var restaurant = data.resturant;
+	var filters = {item_type: 1};
+	console.log(data);
+	for (var i in fields) {
+		var field = fields[i];
+		if (data[field]) {
+			filters[field] = {
+				from: 0,
+				to: parseInt(data[field])
+			};
+		}
+	}
+	ntr.v1_1.search.advanced({
+	    fields: ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'],
+    	queries: {
+    		brand_name: restaurant,
+    		item_name: *
+    	},
 	    offset:0,
 	    limit:20,
-	    filters: {
-	    	item_type: 1
-	    },
+	    filters: filters
 	}, function (err, results) {
 	    if (err) console.log(err);
 	    if (results.total) {
 	    	console.log(results);
+	    	res.send(results);
 	    } else {
 	    	console.log('No results...');
 	    }
-	});*/
+	});
 });
 
 // start the server

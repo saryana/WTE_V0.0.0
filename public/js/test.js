@@ -15,7 +15,7 @@
 			url:"/data",
 			data: result,
 			success: function(data) {
-				console.log('hi');
+				console.log(data);
 			}
 		});
 	});
