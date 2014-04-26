@@ -4,6 +4,7 @@
 	var max;
 
 	$('#submit').click(function() {
+		$( "#submit" ).slideDown(1000);
 		var fields = $('.form-control');
 		var result = {
 			resturant: $(fields[0]).val()
@@ -30,11 +31,39 @@
 					fullData = data;
 					start = 0;
 					max = fullData.length;
-					showElem();
+					//showElem();
+					loadTable();
 				}
 			}
 		});
 	});
+
+	function loadTable() {
+		$('#data').empty();
+		var elem = fullData[start].fields;
+		var item = elem.item_name;
+		var resturant = elem.brand_name;
+		var cals = elem.nf_calories;
+		var fat = elem.nf_total_fat;
+		var chol = elem.nf_cholesterol;
+		var sugar = elem.nf_sugars;
+		var sodium = elem.nf_sodium;
+		var carb = elem.nf_total_carbohydrate;
+		var fib = elem.nf_dietary_fiber;
+		var pro = elem.nf_protein;
+
+		var elemTable = "";
+		elemTable += "<td>" + item +"</td>";
+		elemTable += "<td>" + cals +"</td>";
+		elemTable += "<td>" + fat +"</td>";
+		elemTable += "<td>" + chol +"</td>";
+		elemTable += "<td>" + sugar +"</td>";
+		elemTable += "<td>" + sodium +"</td>";
+		elemTable += "<td>" + carb +"</td>";
+		elemTable += "<td>" + fib +"</td>";
+		elemTable += "<td>" + pro +"</td>";
+		$('#data').append(elemTable);
+	}
 
 	// show the food item
 	function showElem () {
@@ -51,7 +80,7 @@
 		var carb = elem.nf_total_carbohydrate;
 		var fib = elem.nf_dietary_fiber;
 		var pro = elem.nf_protein;
-		var elemParagraph = '<p>';
+		var elemParagraph = '<p id="rabbits">';
 		if (item) elemParagraph += 'Food item ' + item;
 		if (resturant) elemParagraph += ' from ' + resturant;
 		if (cals) elemParagraph += ' has ' + cals + ' cals';
@@ -64,14 +93,16 @@
 	$('#left').click(function() {
 		if (start > 0) {
 			start--;
-			showElem();
+			//showElem();
+			loadTable();
 		}
 	});
 	// move to the right data point
 	$('#right').click(function() {
 		if (start < max-1) {
 			start++;
-			showElem();
+			//showElem();
+			loadTable();
 		}
 	})
 
