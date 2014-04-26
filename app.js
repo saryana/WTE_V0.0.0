@@ -7,7 +7,7 @@ var express = require('express'),
 	path  = require('path'),
 	app = express();
 
-var stuff = ["brand_name", "nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
+var stuff = ["nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
 
 // set the port I <3 boobs
 app.set('port', 8008);
@@ -30,6 +30,7 @@ app.post('/data', function(req, res) {
 	console.log(data);
 	for (var i in stuff) {
 		var field = stuff[i];
+		console.log(field);
 		if (data[field].to) {
 			var amount = data[field];
 
