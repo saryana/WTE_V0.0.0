@@ -1,17 +1,17 @@
 var express = require('express'),
 	constants = require('./config/constants')
-	ntr	= require('nutrionix')({
+	ntr	= require('nutritionix')({
 		appId: constants.APPID,
 		appKey: constants.APP_KEY
 	}, true),
 	path  = require('path'),
 	app = express();
 
-app.use('port', 8008);
+app.set('port', 8008);
 app.use(express.static(path.join(__dirname + 'public')));
 
 app.get('/', function(req, res) {
-	res.sendFile('views/index', {title:'WTE'});
+	res.sendfile('views/index.html', {title:'WTE'});
 });
 
 app.listen(app.get('port'), function () {
