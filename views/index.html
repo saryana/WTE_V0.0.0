@@ -30,7 +30,7 @@
         </div>
         <form class="form-horizontal" role="form">
             <div class="form-group">
-                <div class="col-lg-6 col-lg-offset-3">
+                <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
                     <div class="input-group">
                         <input type="text" class="form-control">
                         <span class="input-group-btn">
@@ -39,22 +39,29 @@
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
-      <div class="row form-group">
-        <input class="btn btn-default col-sm col-sm-offset-3" type="button" id="calb" value="Calories">
-        <input class="btn btn-default col-sm" type="button" id="fatb" value="Fat">
-        <input class="btn btn-default col-sm" type="button" id="chob" value="Cholesterol">
-        <input class="btn btn-default col-sm" type="button" id="sodb" value="Sodium">
-        <input class="btn btn-default col-sm" type="button" id="carb" value="Carbs">
-        <input class="btn btn-default col-sm" type="button" id="fibb" value="Fiber">
-        <input class="btn btn-default col-sm" type="button" id="prob" value="Protein">
-        <input class="btn btn-default col-sm" type="button" id="sugb" value="Sugar">
-      </div>
-      <div class="row" id="insert"></div>
-      <div class="row" id="result">
-            <input class="btn" type="button" id="left" value="Left">
-            <input class="btn" type="button" id="right" value="Right">
-            <div id="data"></div>
-        </div>
+	        <div class="row form-group">
+	        	<input class="btn btn-default col-sm col-sm-offset-3 col-xs-3" type="button" id="calb" value="Calories">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="fatb" value="Fat">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="chob" value="Cholesterol">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="sodb" value="Sodium">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="carb" value="Carbs">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="fibb" value="Fiber">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="prob" value="Protein">
+		        <input class="btn btn-default col-sm col-xs-3" type="button" id="sugb" value="Sugar">
+	        </div>
+	        <div class="row" id="insert"></div>
+    	</form>
+    	<div class="row" id="result">
+    		<table class="table table-responsive">
+    			<thead><th>Name</th><th>Calories</th><th>Cholesterol</th><th>Sodium</th><th>Carbs</th><th>Fiber</th><th>Protein</th><th>Sugar</th><th>Fat</th></thead>
+    			<tr id="data"></tr>
+    		</table>
+    		<!--<div class="row" id="data"></div>-->
+    		<div class="row">
+	        	<input class="btn btn-primary col-sm col-sm-offset-5 col-xs col-xs-offset-5" type="button" id="left" value="Left">
+	        	<input class="btn btn-primary col-sm col-xs" type="button" id="right" value="Right">
+        	</div>
+    	</div>
 
             <!-- <div class="form-group" id="cal">
                 <label for="calorie" class="col-sm-5 control-label">Calories</label>
