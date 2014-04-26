@@ -37,12 +37,12 @@ app.post('/data', function(req, res) {
 			};
 		}
 	}
+	var poo = ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'];
 	ntr.v1_1.search.advanced({
-	    fields: ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'],
+	    fields: poo,
     	queries: {
-    		brand_name: restaurant,
-    		item_name: *
-    	},
+    		brand_name: restaurant
+       	},
 	    offset:0,
 	    limit:20,
 	    filters: filters
