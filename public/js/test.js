@@ -1,4 +1,7 @@
 (function() {
+	var fullData;
+	var start;
+	var max;
 
 	$('#submit').click(function() {
 		var fields = $('.form-control');
@@ -19,9 +22,156 @@
 			url:"/data",
 			data: result,
 			success: function(data) {
-				console.log(data);
+				if (!data) {
+					alert('that is quite unfortunate');
+				} else {
+					$('#insert').empty();
+					fullData = data;
+					start = 0;
+					max = fullData.length;
+					showElem();
+				}
 			}
 		});
 	});
 
+	// show the food item
+	function showElem () {
+		$('#data').empty();
+		var elem = fullData[start].fields;
+		console.log(elem);
+		var item = elem.item_name;
+		var resturant = elem.brand_name;
+		var cals = elem.nf_calories;
+		var fat = elem.nf_total_fat;
+		var chol = elem.nf_cholesterol;
+		var sugar = elem.nf_sugars;
+		var sodium = elem.nf_sodium;
+		var carb = elem.nf_total_carbohydrate;
+		var fib = elem.nf_dietary_fiber;
+		var pro = elem.nf_protein;
+		var elemParagraph = '<p>';
+		if (item) elemParagraph += 'Food item ' + item;
+		if (resturant) elemParagraph += ' from ' + resturant;
+		if (cals) elemParagraph += ' has ' + cals + ' cals';
+		if (fat) elemParagraph += ' and ' + fat + ' gram of fat.';
+		elemParagraph += '</p>';
+		console.log(elemParagraph);
+		$('#data').append(elemParagraph);
+	}
+	// Move to the left data point
+	$('#left').click(function() {
+		if (start > 0) {
+			start--;
+			showElem();
+		}
+	});
+	// move to the right data point
+	$('#right').click(function() {
+		if (start < max) {
+			start++;
+			showElem();
+		}
+	})
+
+
+	// Really bad code
+	// Sean does not enjoy front end stuff
+
+	var cal = '<div class="form-group" id="cal"><label for="calorie" class="col-sm-5 control-label">Calories</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_calories" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var calsee = false;
+	$('#calb').click(function() {
+
+		if (calsee) {
+			$('#cal').remove();
+		} else {
+			$('#insert').append(cal);
+		}
+		calsee = !calsee;
+	});
+
+	var fat = '<div class="form-group" id="fat"><label for="fat" class="col-sm-5 control-label">Fat</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_total_fat" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var fatsee = false;
+	$('#fatb').click(function() {
+
+		if (fatsee) {
+			$('#fat').remove();
+		} else {
+			$('#insert').append(fat);
+		}
+		fatsee = !fatsee;
+	});
+
+	var cho = '<div class="form-group" id="cho"><label for="cholesterol" class="col-sm-5 control-label">Cholesterol</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_cholesterol" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+
+	var chosee = false;
+	$('#chob').click(function() {
+
+		if (chosee) {
+			$('#cho').remove();
+		} else {
+			$('#insert').append(cho);
+		}
+		chosee = !chosee;
+	});
+
+	var sod = '<div class="form-group" id="sod"><label for="sodium" class="col-sm-5 control-label">Sodium</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_sodium" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var sodsee = false;
+	$('#sodb').click(function() {
+
+		if (sodsee) {
+			$('#sod').remove();
+		} else {
+			$('#insert').append(sod);
+		}
+		sodsee = !sodsee;
+	});
+
+	var sug = '<div class="form-group" id="sug"><label for="sugars" class="col-sm-5 control-label">Sugar</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_sugars" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>'
+	var sugsee = false;
+	$('#sugb').click(function() {
+
+		if (sugsee) {
+			$('#sug').remove();
+		} else {
+			$('#insert').append(sug);
+		}
+		sugsee = !sugsee;
+	});
+
+	var car = '<div class="form-group" id="car"><label for="carbohydrate" class="col-sm-5 control-label">Carbohydrate</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_total_carbohydrate" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var carsee = false;
+	$('#carb').click(function() {
+
+		if (carsee) {
+			$('#car').remove();
+		} else {
+			$('#insert').append(car);
+		}
+		carsee = !carsee;
+	});
+
+	var fib = '<div class="form-group" id="fib"><label for="fiber" class="col-sm-5 control-label">Fiber</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_dietary_fiber" placeholder="To"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var fibsee = false;
+	$('#fibb').click(function() {
+
+		if (fibsee) {
+			$('#fib').remove();
+		} else {
+			$('#insert').append(fib);
+		}
+		fibsee = !fibsee;
+	});
+
+	var pro = '<div class="form-group" id="pro"><label for="protein" class="col-sm-5 control-label">Protein</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_protein" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var prosee = false;
+	$('#prob').click(function() {
+
+		if (prosee) {
+			$('#pro').remove();
+		} else {
+			$('#insert').append(pro);
+		}
+		prosee = !prosee;
+	});
 })();

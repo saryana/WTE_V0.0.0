@@ -31,7 +31,7 @@ app.post('/data', function(req, res) {
 	for (var i in stuff) {
 		var field = stuff[i];
 		console.log(field);
-		if (data[field].to) {
+		if (data[field] && data[field].to) {
 			var amount = data[field];
 
 			filters[field] = {
@@ -43,7 +43,7 @@ app.post('/data', function(req, res) {
 	console.log(filters);
 
 	var poo = ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'];
-	
+
 	ntr.v1_1.search.advanced({
     	fields: poo,
     	query: restaurant,
