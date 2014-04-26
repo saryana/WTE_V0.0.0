@@ -1,12 +1,5 @@
 (function() {
 
-	var temp = $('.form-control');
-
-	for (var i = 1; i < temp.length; i++) {
-		var elem = temp[i];
-		$(elem).mask('1999-1999');
-	}
-
 	$('#submit').click(function() {
 		var fields = $('.form-control');
 		var result = {
