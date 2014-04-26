@@ -8,10 +8,14 @@ var express = require('express'),
 	app = express();
 
 app.set('port', 8008);
-app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
 	res.sendfile('views/index.html', {title:'WTE'});
+});
+
+app.post('/', function(req, res) {
+
 });
 
 app.listen(app.get('port'), function () {
