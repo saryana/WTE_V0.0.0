@@ -1,5 +1,4 @@
 html {
-	overflow: hidden;
 }
 .top-buffer {
 	margin-top: 10px;
@@ -8,7 +7,7 @@ html {
 .table-nonfluid {
 	margin-left: auto;
 	margin-right: auto;
-	width: auto;
+	width: 400px !important;
 }
 #data td {
 	width: 250px;
@@ -21,8 +20,12 @@ html {
 	width: 70px !important;
 }
 #left {
-	float: left;
+	margin-top: 100px;
+	margin-left: 50px;
+float: left;
 }
 #right {
-	float: right;
+	margin-top: 100px;
+	margin-right: 50px;
+float: right;
 }
