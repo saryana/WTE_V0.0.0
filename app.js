@@ -15,6 +15,9 @@ app.set('port', process.env.PORT || 8000);
 app.use(express.static(path.join(__dirname, 'public')));
 // Read the body of the page
 app.use(express.bodyParser());
+// Uses the favicon
+app.use(express.favicon(path.join(__dirname, 'public/favicon.ico'))); 
+
 // get the homepage using basic html
 app.get('/', function(req, res) {
 	res.sendfile('views/index.html', {title:'WTE'});
