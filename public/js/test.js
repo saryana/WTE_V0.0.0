@@ -3,6 +3,11 @@
 	var start;
 	var max;
 
+	$('window').keypress(function(e) {
+		console.log(e.keyCode);
+	});
+
+
 	$('#submit').click(function() {
 		$( "#submit" ).slideDown(1000);
 		var fields = $('.form-control');
@@ -72,14 +77,14 @@
 		console.log(elem);
 		var item = elem.item_name;
 		var resturant = elem.brand_name;
-		var cals = elem.nf_calories;
-		var fat = elem.nf_total_fat;
-		var chol = elem.nf_cholesterol;
-		var sugar = elem.nf_sugars;
-		var sodium = elem.nf_sodium;
-		var carb = elem.nf_total_carbohydrate;
-		var fib = elem.nf_dietary_fiber;
-		var pro = elem.nf_protein;
+		var cals = (elem.nf_calories) ? elem.nf_calories : 0;
+		var fat = (elem.nf_total_fat) ? elem.nf_total_fat : 0;
+		var chol = (elem.nf_cholesterol) ? elem.nf_cholesterol : 0;
+		var sugar = (elem.nf_sugars) ? elem.nf_sugars : 0;
+		var sodium = (elem.nf_sodium) ? elem.nf_sodium : 0;
+		var carb = (elem.nf_total_carbohydrate) ? elem.nf_total_carbohydrate : 0;
+		var fib = (elem.nf_dietary_fiber) ? elem.nf_dietary_fiber : 0;
+		var pro = (elem.nf_protein) ? elem.nf_protein : 0;
 		var elemParagraph = '<p>';
 		if (item) elemParagraph += 'Food item ' + item;
 		if (resturant) elemParagraph += ' from ' + resturant;
