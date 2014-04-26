@@ -6,6 +6,8 @@
 		"express": "3.4.7",
 		"nutritionix": "0.0.4"
 	},
+	{
+	"engines": { "node" : "0.10.26" },
 	"contriburors": [
 	{
 		"name": "Sean Aryana",
