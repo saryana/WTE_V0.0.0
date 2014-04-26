@@ -41,7 +41,9 @@ app.post('/data', function(req, res) {
 		}
 	}
 	console.log(filters);
+
 	var poo = ['item_name','brand_name','item_description','nf_calories','nf_total_fat','nf_cholesterol', 'nf_sugars', 'nf_sodium','nf_total_carbohydrate','nf_dietary_fiber','nf_protein'];
+	
 	ntr.v1_1.search.advanced({
     	fields: poo,
     	query: restaurant,
