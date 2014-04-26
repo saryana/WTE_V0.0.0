@@ -26,6 +26,7 @@
 					alert('that is quite unfortunate');
 				} else {
 					$('#insert').empty();
+					$('.active').removeClass('active');
 					fullData = data;
 					start = 0;
 					max = fullData.length;
@@ -87,6 +88,7 @@
 		} else {
 			$('#insert').append(cal);
 		}
+		$('#calb').toggleClass("active");
 		calsee = !calsee;
 	});
 
@@ -99,6 +101,7 @@
 		} else {
 			$('#insert').append(fat);
 		}
+		$('#fatb').toggleClass("active");
 		fatsee = !fatsee;
 	});
 
@@ -109,9 +112,11 @@
 
 		if (chosee) {
 			$('#cho').remove();
+
 		} else {
 			$('#insert').append(cho);
 		}
+		$('#chob').toggleClass("active");
 		chosee = !chosee;
 	});
 
@@ -124,18 +129,19 @@
 		} else {
 			$('#insert').append(sod);
 		}
+		$('#sodb').toggleClass("active");
 		sodsee = !sodsee;
 	});
 
 	var sug = '<div class="form-group" id="sug"><label for="sugars" class="col-sm-5 control-label">Sugar</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_sugars" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>'
 	var sugsee = false;
 	$('#sugb').click(function() {
-
 		if (sugsee) {
 			$('#sug').remove();
 		} else {
 			$('#insert').append(sug);
 		}
+		$('#sugb').toggleClass("active");
 		sugsee = !sugsee;
 	});
 
@@ -148,10 +154,11 @@
 		} else {
 			$('#insert').append(car);
 		}
+		$('#carb').toggleClass("active");
 		carsee = !carsee;
 	});
 
-	var fib = '<div class="form-group" id="fib"><label for="fiber" class="col-sm-5 control-label">Fiber</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_dietary_fiber" placeholder="To"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
+	var fib = '<div class="form-group" id="fib"><label for="fiber" class="col-sm-5 control-label">Fiber</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_dietary_fiber" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
 	var fibsee = false;
 	$('#fibb').click(function() {
 
@@ -160,6 +167,7 @@
 		} else {
 			$('#insert').append(fib);
 		}
+		$('#fibb').toggleClass("active");
 		fibsee = !fibsee;
 	});
 
@@ -172,6 +180,7 @@
 		} else {
 			$('#insert').append(pro);
 		}
+		$('#prob').toggleClass("active");
 		prosee = !prosee;
 	});
 })();
