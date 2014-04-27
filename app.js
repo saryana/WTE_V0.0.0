@@ -10,7 +10,7 @@ var express = require('express'),
 var stuff = ["nf_calories", "nf_total_fat", "nf_cholesterol", "nf_sodium", "nf_total_carbohydrate", "nf_sugars", "nf_dietary_fiber", "nf_protein"]
 
 // Uses the favicon
-app.use(express.favicon(path.join(__dirname, 'public/image/favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico'))); 
 // set the port I <3 boobs
 app.set('port', process.env.PORT || 8000);
 // share the love, make public available
