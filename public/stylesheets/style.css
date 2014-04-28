@@ -1,14 +1,10 @@
-html {
-}
-
 body {
-	position: relative;
 	width: 100%;
 }
 
 #head-shadow {
-	background-color: rgba(255, 255, 255, .75);
-	position: fixed;
+	background-color: rgba(255, 255, 255, .6);
+	position: absolute;
 	left: 0px;
 	top: 0px;
 	height: 100px;
@@ -44,6 +40,13 @@ body {
 	margin-right: auto;
 	width: auto;
 }
+#data {
+	background-color: white;
+}
+#data tr:nth-child(even) {
+	background-color: #F7FBFF;
+}
+
 #data td {
 	width: 250px;
 }

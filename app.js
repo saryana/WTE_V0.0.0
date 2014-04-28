@@ -70,6 +70,6 @@ app.post('/data', function(req, res) {
 });
 
 // start the server
-app.listen(app.get('port'), function () {
+app.listen(/*app.get('port')*/8008, function () {
 	console.log('I love boobies so I run on port ' + app.get('port'));
 });
