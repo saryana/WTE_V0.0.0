@@ -44,16 +44,96 @@
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
 	        <div class="row form-group" id="butts">
-	        	<input class="btn btn-default col-md col-md-offset-2 col-sm" type="button" id="calb" value="Calories">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="fatb" value="Fat">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="chob" value="Cholesterol">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="sodb" value="Sodium">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="carb" value="Carbs">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="fibb" value="Fiber">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="prob" value="Protein">
-		        <input class="btn btn-default col-md col-sm col-xs" type="button" id="sugb" value="Sugar">
+	        	<input class="filters btn btn-default col-md col-md-offset-2 col-sm" type="button" id="calb" value="Calories">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="fatb" value="Fat">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="chob" value="Cholesterol">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="sodb" value="Sodium">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="carb" value="Carbs">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="fibb" value="Fiber">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="prob" value="Protein">
+		        <input class="filters btn btn-default col-md col-sm col-xs" type="button" id="sugb" value="Sugar">
 	        </div>
-	        <div class="row" id="insert"></div>
+	        <div class="row" id="insert">
+	        	<div class="filter-input form-group" id="cal">
+	        		<label for="calorie" class="col-sm-5 control-label">Calories</label>
+        			<div class="col-sm-1">
+        				<input type="text" class="form-control" id="nf_calories" placeholder="From">
+        			</div>
+        			<div class="col-sm-1">
+        				<input type="text" class="form-control" placeholder="To">
+        			</div>
+    			</div>
+
+    			<div class="filter-input form-group" id="fat">
+    				<label for="fat" class="col-sm-5 control-label">Fat</label>
+    				<div class="col-sm-1">
+    					<input type="text" class="form-control" id="nf_total_fat" placeholder="From">
+    				</div>
+    				<div class="col-sm-1">
+    					<input type="text" class="form-control" placeholder="To">
+    				</div>
+				</div>
+
+    			<div class="filter-input form-group" id="cho">
+    				<label for="cholesterol" class="col-sm-5 control-label">Cholesterol</label>
+    				<div class="col-sm-1">
+    					<input type="text" class="form-control" id="nf_cholesterol" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+				
+				<div class="filter-input form-group" id="sod">
+					<label for="sodium" class="col-sm-5 control-label">Sodium</label>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" id="nf_sodium" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+
+				<div class="filter-input form-group" id="sug">
+					<label for="sugars" class="col-sm-5 control-label">Sugar</label>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" id="nf_sugars" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+
+				<div class="filter-input form-group" id="car">
+					<label for="carbohydrate" class="col-sm-5 control-label">Carbohydrate</label>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" id="nf_total_carbohydrate" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+
+				<div class="filter-input form-group" id="fib">
+					<label for="fiber" class="col-sm-5 control-label">Fiber</label>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" id="nf_dietary_fiber" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+
+				<div class="filter-input form-group" id="pro">
+					<label for="protein" class="col-sm-5 control-label">Protein</label>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" id="nf_protein" placeholder="From">
+					</div>
+					<div class="col-sm-1">
+						<input type="text" class="form-control" placeholder="To">
+					</div>
+				</div>
+	        </div>
     	</form>
     	<div class="row" id="result">
             <input class="btn btn-default btn-large col-md col-md-offset-4 col-sm col-sm-offset-7" type="button" id="new-search" value="New Search">

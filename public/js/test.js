@@ -41,7 +41,7 @@
 					$('#result').slideToggle('fast');
 					$('#search-area').slideToggle('fast');
 					$('#butts').slideToggle('fast');
-					$('#insert').empty();
+					$('.filter-input').hide('fast');
 					$('.active').removeClass('active');
 					fullData = data;
 					start = 0;
@@ -54,9 +54,10 @@
 	});
 
 	$('#new-search').click(function() {
-					$('#result').slideToggle('fast');
-					$('#search-area').slideToggle('fast');
-					$('#butts').slideToggle('fast');
+		$('#result').slideToggle('fast');
+		$('#search-area').slideToggle('fast');
+		$('.filter-input input').val('');
+		$('#butts').slideToggle('fast');
 	});
 
 	function loadTable() {
@@ -76,17 +77,18 @@
 		var elemTable = '';
 		elemTable += '<tr><td>Name</td><td id="name">' + item +'</td></tr>';
 		elemTable += '<td>Calories</td><td>' + cals  +'</td></tr>';
+		elemTable += '<tr><td>Fat (g)</td><td>' + fat  +'</td></tr>';
 		elemTable += '<tr><td>Cholesterol (mg)</td><td>' + chol +'</td></tr>';
 		elemTable += '<tr><td>Sodium (mg)</td><td>' + sodium  +'</td></tr>';
 		elemTable += '<tr><td>Carbs (g)</td><td>' + carb  +'</td></tr>';
 		elemTable += '<tr><td>Fiber (g)</td><td>' + fib +'</td></tr>';
 		elemTable += '<tr><td>Protein (g)</td><td>' + pro  +'</td></tr>';
 		elemTable += '<tr><td>Sugar (g)</td><td>' + sugar  +'</td></tr>';
-		elemTable += '<tr><td>Fat (g)</td><td>' + fat  +'</td></tr>';
 		$('#data').append(elemTable);		
 	}
 
 	// show the food item
+	/*
 	function showElem () {
 		$('#data').empty();
 		var elem = fullData[start].fields;
@@ -110,6 +112,7 @@
 		console.log(elemParagraph);
 		$('#data').append(elemParagraph);
 	}
+	*/
 	// Move to the left data point
 	$('#left').click(function() {
 		if (start > 0) {
@@ -130,7 +133,12 @@
 
 	// Really bad code
 	// Sean does not enjoy front end stuff
-
+	
+	$('.filters').click(function() {		
+		$('#' + this.id.substring(0, this.id.length - 1)).toggle();
+		$('#' + this.id).toggleClass("active");
+	});
+/*
 	var cal = '<div class="form-group" id="cal"><label for="calorie" class="col-sm-5 control-label">Calories</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_calories" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
 	var calsee = false;
 	$('#calb').click(function() {
@@ -144,6 +152,7 @@
 
 		calsee = !calsee;
 	});
+
 
 	var fat = '<div class="form-group" id="fat"><label for="fat" class="col-sm-5 control-label">Fat</label><div class="col-sm-1"><input type="text" class="form-control" id="nf_total_fat" placeholder="From"></div><div class="col-sm-1"><input type="text" class="form-control" placeholder="To"></div></div>';
 	var fatsee = false;
@@ -236,4 +245,5 @@
 		$('#prob').toggleClass("active");
 		prosee = !prosee;
 	});
+*/
 })();

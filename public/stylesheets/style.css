@@ -70,3 +70,7 @@ float: right;
 #new-search {
 	margin-bottom: 5px;
 }
+
+.filter-input {
+	display: none;
+}
